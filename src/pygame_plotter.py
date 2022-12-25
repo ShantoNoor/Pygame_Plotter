@@ -9,7 +9,7 @@ def to(x, y): # translate origin
     return x + WIDTH // 2 - STEP//2, -y + HEIGHT // 2 + STEP//2
 
 
-def put_pixel(x, y, color=(0, 255, 0)):
+def draw_pixel(x, y, color=(0, 255, 0)):
     x = x * STEP
     y = y * STEP
     x, y = to(x, y)
@@ -30,8 +30,8 @@ def draw_graph():
 
 
 def cb():
-    put_pixel(0, 0)
-    put_pixel(1, 1)
+    draw_pixel(0, 0)
+    draw_pixel(1, 1)
 
 
 def show(call, args, width=500, height=500, step=20, name='PyGame Ploter'):
@@ -53,7 +53,7 @@ def show(call, args, width=500, height=500, step=20, name='PyGame Ploter'):
             if event.type == pg.QUIT:
                 running = False
 
-        draw_graph()
+        # draw_graph()
         call(*args)
         pg.display.flip()
 
